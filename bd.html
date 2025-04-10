@@ -4,8 +4,125 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .main {
+            display: flex;
+            position: fixed;
+            top: 0px;
+            bottom: 0px;
+            left: 0px;
+            right: 0px;
+            background-color: lightblue;
+            justify-content: center;
+            align-items: center;
+        }
+        .body {
+            justify-content: center;
+        }
+        .question {
+            display: flex;
+            justify-content: center;
+        }
+        .buttons {
+            display: flex;
+            justify-content: center;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .fade-in-image {
+            opacity: 0;
+            transition: opacity 2s ease-in-out;
+        }
+        .fade-in-image.loaded {
+            opacity: 1;
+        }
+    </style>
 </head>
-<body>
-    <p>HAPPY BIRTHDAY</p>
+<body style="height:5000px">
+    <div class="main">
+        <div class="body">
+            <div class="question">What, did you expect something more?</div>
+            <div class="buttons">
+                <button>Yes</button>
+                <button>No</button>
+            </div>
+        </div>
+        
+        <br>
+        <br>
+    </div>
+    
+    <script>
+        bodyElem = document.querySelector('.body');
+        function loadScene(scene) {
+            if (scene === 1) {
+                bodyElem.innerHTML = `
+                    <div class="question">HAPPY BIRTHDAY!1!!</div>
+                `;
+                setTimeout(() => {
+                    loadScene(2);
+                }, 2000);
+            } else if (scene === 2) {
+                bodyElem.innerHTML = `
+                    <div class="question">HAPPY BIRTHDAY!1!!</div>
+                    <div class="question">What, did you expect something more?</div>
+                    <div class="buttons">
+                        <button>Yes</button>
+                        <button>No</button>
+                    </div>
+                `;
+            } else if (scene === 2) {
+                bodyElem.innerHTML = `
+                    
+                `;
+            } else if (scene === 2) {
+                bodyElem.innerHTML = `
+                    
+                `;
+            } else if (scene === 2) {
+                bodyElem.innerHTML = `
+                    
+                `;
+            } else if (scene === 2) {
+                bodyElem.innerHTML = `
+                    
+                `;
+            } else if (scene === 2) {
+                bodyElem.innerHTML = `
+                    
+                `;
+            } else if (scene === 2) {
+                bodyElem.innerHTML = `
+                    
+                `;
+            } else if (scene === 2) {
+                bodyElem.innerHTML = `
+                    
+                `;
+            } else if (scene === 2) {
+                bodyElem.innerHTML = `
+                    
+                `;
+            } else if (scene === 2) {
+                bodyElem.innerHTML = `
+                    
+                `;
+            } else if (scene === 2) {
+                bodyElem.innerHTML = `
+                    
+                `;
+            } else if (scene === 2) {
+                bodyElem.innerHTML = `
+                    
+                `;
+            }
+        }
+        
+        loadScene(1);
+    </script>
 </body>
 </html>
