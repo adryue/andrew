@@ -55,6 +55,8 @@
             return currentDate.getMonth() === 3 && currentDate.getDate() === 12;
         }
         
+        let numTimes12 = 0; //scene 12 variable
+        
         const questionElem = document.querySelector('.question');
         const bodyElem = document.querySelector('.body');
         function loadScene(scene) {
@@ -147,11 +149,22 @@
                     </div>
                 `;
             } else if (scene === 12) {
+                numTimes12++;
+                if (numTimes12 >= 5) {
+                    loadScene(13);
+                    return;
+                }
                 bodyElem.innerHTML = `
                     <img class="fade-in-image" src="https://media1.tenor.com/m/pd4c5AsVUQgAAAAC/nezha-natra.gif">
                     <div class="buttons">
                         <button class="yes-button" onclick="loadScene(12)">but really, it is though</button>
                     </div>
+                `;
+                makeImgFade(document.querySelector('.fade-in-image'));
+            } else if (scene === 13) {
+                bodyElem.innerHTML = `
+                    <div class="question">Stop clicking</div>
+                    <img class="fade-in-image" src="images/ne zha 2 aura.webp">
                 `;
                 makeImgFade(document.querySelector('.fade-in-image'));
             }
@@ -173,7 +186,7 @@
             }
         }
         
-        loadScene(1);
+        loadScene(12);
     </script>
 </body>
 </html>
