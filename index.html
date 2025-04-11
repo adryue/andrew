@@ -74,14 +74,14 @@
                 `
             } else if (scene === 3) {
                 bodyElem.innerHTML = `
-                    <img class="fade-in-image" src="https://static.wikia.nocookie.net/beca7c5b-ebc4-4d77-8613-2705c340fa23/scale-to-width/755">
+                    <img src="https://static.wikia.nocookie.net/beca7c5b-ebc4-4d77-8613-2705c340fa23/scale-to-width/755">
                     <div class="question">Are you sure?</div>
                     <div class="buttons">
                         <button class="yes-button" onclick="loadScene(4)">Yes</button>
                         <button class="no-button" onclick="loadScene(5)">No</button>
                     </div>
                 `;
-                makeImgFade(document.querySelector('.fade-in-image'));
+                makeImgFade();
             } else if (scene === 4) {
                 bodyElem.innerHTML = `
                     <div class="question">bruh check again</div>
@@ -93,19 +93,19 @@
             } else if (scene === 5) {
                 bodyElem.innerHTML = `
                     <div>[staring at you]</div>
-                    <img class="fade-in-image" src="https://media1.tenor.com/m/GhJu8wmlQv0AAAAC/focus-concentrate.gif">
+                    <img src="https://media1.tenor.com/m/GhJu8wmlQv0AAAAC/focus-concentrate.gif">
                     <div class="question">Then check!</div>
                     <div class="buttons">
                         <button class="yes-button" onclick="loadScene(6)">nah</button>
                         <button class="no-button" onclick="loadScene(7)">ok</button>
                     </div>
                 `;
-                makeImgFade(document.querySelector('.fade-in-image'));
+                makeImgFade();
             } else if (scene === 6) {
                 bodyElem.innerHTML = `
-                    <img class="fade-in-image" src="https://media1.tenor.com/m/Euyv5NzBZFAAAAAC/thanos-infinity-gauntlet.gif">
+                    <img src="https://media1.tenor.com/m/Euyv5NzBZFAAAAAC/thanos-infinity-gauntlet.gif">
                 `;
-                makeImgFade(document.querySelector('.fade-in-image'));
+                makeImgFade();
                 setTimeout(() => {
                     window.location = `https://www.google.com/search?q=what+day+is+it&rlz=1C1CHBF_enUS881US881&oq=what+day+is+it&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIHCAEQABiPAjIHCAIQABiPAtIBCDEzNjdqMGoxqAIAsAIA&sourceid=chrome&ie=UTF-8`;
                 }, 2000);
@@ -126,17 +126,17 @@
                 }, 2000);
             } else if (scene === 9) {
                 bodyElem.innerHTML = `
-                    <img class="fade-in-image" src="https://media.tenor.com/4Lo_gJ2IYxIAAAAi/%D0%BA%D1%83%D0%B4%D0%B5%D0%BB%D1%8F%D1%87%D1%83%D1%80%D0%BA%D0%B0.gif">
+                    <img src="https://media.tenor.com/4Lo_gJ2IYxIAAAAi/%D0%BA%D1%83%D0%B4%D0%B5%D0%BB%D1%8F%D1%87%D1%83%D1%80%D0%BA%D0%B0.gif">
                 `;
-                makeImgFade(document.querySelector('.fade-in-image'));
+                makeImgFade();
                 setTimeout(() => {
                     window.location = `bd.html`;
                 }, 2000);
             } else if (scene === 10) {
                 bodyElem.innerHTML = `
-                    <img class="fade-in-image" src="https://media.tenor.com/4Lo_gJ2IYxIAAAAi/%D0%BA%D1%83%D0%B4%D0%B5%D0%BB%D1%8F%D1%87%D1%83%D1%80%D0%BA%D0%B0.gif">
+                    <img src="https://media.tenor.com/4Lo_gJ2IYxIAAAAi/%D0%BA%D1%83%D0%B4%D0%B5%D0%BB%D1%8F%D1%87%D1%83%D1%80%D0%BA%D0%B0.gif">
                 `;
-                makeImgFade(document.querySelector('.fade-in-image'));
+                makeImgFade();
                 setTimeout(() => {
                     window.location = `bd.html`;
                 }, 2000);
@@ -154,22 +154,25 @@
                     return;
                 }
                 bodyElem.innerHTML = `
-                    <img class="fade-in-image" src="https://media1.tenor.com/m/pd4c5AsVUQgAAAAC/nezha-natra.gif">
+                    <img src="https://media1.tenor.com/m/pd4c5AsVUQgAAAAC/nezha-natra.gif">
                     <div class="buttons">
                         <button class="yes-button" onclick="loadScene(12)">but really, it is though</button>
                     </div>
                 `;
-                makeImgFade(document.querySelector('.fade-in-image'));
+                makeImgFade();
             } else if (scene === 13) {
                 bodyElem.innerHTML = `
                     <div class="question">Stop clicking</div>
-                    <img class="fade-in-image" src="images/ne zha 2 aura.webp">
+                    <img src="images/ne zha 2 aura.webp">
                 `;
-                makeImgFade(document.querySelector('.fade-in-image'));
+                makeImgFade();
             }
         }
         
-        function makeImgFade(imgElem) {
+        function makeImgFade() {
+            let imgElem = document.querySelector('img');
+            imgElem.classList.add('fade-in-image');
+            
             // Remove the loaded class initially to reset the state
             imgElem.classList.remove('loaded');
             

@@ -18,10 +18,12 @@
         }
         .body {
             justify-content: center;
+            align-items: center;
         }
         .question {
             display: flex;
             justify-content: center;
+            margin-bottom: 5px;
         }
         .buttons {
             display: flex;
@@ -45,6 +47,140 @@
 <body style="height:5000px">
     <div class="main">
         <div class="body">
+            <!-- 1 -->
+            <div class="question">HAPPY BIRTHDAY!1!!</div>
+            <div class="buttons">
+                <button>Yes</button>
+                <button>No</button>
+            </div>
+            <br>
+            <!-- 2 -->
+            <div class="question">HAPPY BIRTHDAY!1!!</div>
+            <div class="question">What, did you expect something more?</div>
+            <div class="buttons">
+                <button>Yes</button>
+                <button>No</button>
+            </div>
+            <br>
+            <!-- 3 -->
+            <div class="question">I SAID, were you expecting something more?</div>
+            <div class="buttons">
+                <button>Yes</button>
+                <button>No</button>
+            </div>
+            <br>
+            <!-- 4 -->
+            <div class="question">Well, I'm busy, ok?</div>
+            <div class="buttons">
+                <button>Too bad</button>
+            </div>
+            <br>
+            <!-- 5 -->
+            <div class="question">ugh, FINE!!</div>
+            <br>
+            <!-- 6 -->
+            <div class="question">Happy Birthday!</div>
+            <div class="question">is that better?</div>
+            <div class="buttons">
+                <button>Yes</button>
+                <button>No</button>
+            </div>
+            <br>
+            <!-- 7 -->
+            <div class="question">...</div>
+            <br>
+            <!-- 8 -->
+            <div class="question">You're just jealous that I get to see the sun</div>
+            <div class="buttons">
+                <button>Rude</button>
+            </div>
+            <br>
+            <!-- 9 -->
+            <div class="question">BRUH</div>
+            <div class="buttons">
+                <button>:D</button>
+            </div>
+            <br>
+            <!-- 10 -->
+            <div class="question">OK FINE</div>
+            <br>
+            <!-- 11 -->
+            <div class="question">But first, you need to answer a couple of questions</div>
+            <div class="buttons">
+                <button>ok</button>
+            </div>
+            <br>
+            <!-- 12 -->
+            <div class="question">How old are you turning?</div>
+            <img src="images/12-toes.jpg">
+            <div class="buttons">
+                <button>21</button>
+                <button>not 21</button>
+            </div>
+            <br>
+            <!-- 13 -->
+            <div class="question">DAMN THAT'S OLD</div>
+            <img src="images/13-oppenheimer.jpg">
+            <br>
+            <!-- 14 -->
+            <div class="question">Next question:</div>
+            <br>
+            <!-- 15 -->
+            <div class="question">Who's better at dk summit?</div>
+            <img src="images/15-you.jpg">
+            <div class="buttons">
+                <button>You</button>
+                <button>Me</button>
+            </div>
+            <br>
+            <!-- 16 -->
+            <div class="question">Me?</div>
+            <br>
+            <!-- 17 -->
+            <div class="question">That's right!</div>
+            <br>
+            <!-- 18 -->
+            <div class="question">Last question:</div>
+            <br>
+            <!-- 19 -->
+            <div class="question">What's the first university that rejected me?</div>
+            <img src="images/19-uw.jpg">
+            <div class="buttons">
+                <button>University of Washington</button>
+                <button>University of Wisconsin, Madison</button>
+                <button>George Washington University</button>
+                <button>Washington State University</button>
+            </div>
+            <br>
+            <!-- 20 -->
+            <div class="question">That's right!</div>
+            <img src="https://media.tenor.com/kYSf7grsqBIAAAAj/tn26.gif">
+            <br>
+            <!-- 21 -->
+            <div class="question">Ok, you finally made it.</div>
+            <br>
+            <!-- 22 -->
+            <div class="question">Happy birthday, Andrew.</div>
+            <br>
+            <!-- 23 -->
+            <div class="question">You're the best brother ever.</div>
+            <br>
+            <!-- 24 -->
+            <div class="question">Like, actually.</div>
+            <br>
+            <!-- 25 -->
+            <div class="question">THE END</div>
+            <img src="images/25-end.jpg">
+            <div class="buttons">
+                <button class="confetti-btn">👏</button>
+            </div>
+            <br>
+            <div class="question">What, did you expect something more?</div>
+            <div class="buttons">
+                <button>Yes</button>
+                <button>No</button>
+            </div>
+            <br>
             <div class="question">What, did you expect something more?</div>
             <div class="buttons">
                 <button>Yes</button>
@@ -54,10 +190,19 @@
         
         <br>
         <br>
+        
     </div>
+    
+    <!-- chatgpt'd confetti -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     
     <script>
         bodyElem = document.querySelector('.body');
+        
+        let scene3var = 20; //font size in px
+        let scene6var = 20; //font size in px
+        let scene12var = 50;
+        
         function loadScene(scene) {
             if (scene === 1) {
                 bodyElem.innerHTML = `
@@ -71,54 +216,220 @@
                     <div class="question">HAPPY BIRTHDAY!1!!</div>
                     <div class="question">What, did you expect something more?</div>
                     <div class="buttons">
-                        <button>Yes</button>
-                        <button>No</button>
+                        <button onclick="loadScene(4)">Yes</button>
+                        <button onclick="loadScene(3)">No</button>
                     </div>
                 `;
-            } else if (scene === 2) {
+            } else if (scene === 3) {
+                scene3var += 4;
                 bodyElem.innerHTML = `
-                    
+                    <div class="question" style="font-size: ${scene3var}px;">I SAID, were you expecting something more?</div>
+                    <div class="buttons">
+                        <button onclick="loadScene(4)">Yes</button>
+                        <button onclick="loadScene(3)">No</button>
+                    </div>
                 `;
-            } else if (scene === 2) {
+            } else if (scene === 4) {
                 bodyElem.innerHTML = `
-                    
+                    <div class="question">Well, I'm busy, ok?</div>
+                    <img src="images/ucsb.png">
+                    <div class="buttons">
+                        <button onclick="loadScene(5)">Too bad</button>
+                    </div>
                 `;
-            } else if (scene === 2) {
+                makeImgFade();
+            } else if (scene === 5) {
                 bodyElem.innerHTML = `
-                    
+                    <div class="question">ugh, FINE!!</div>
                 `;
-            } else if (scene === 2) {
+                setTimeout(() => {
+                    loadScene(6);
+                }, 2000);
+            } else if (scene === 6) {
+                scene6var += 4;
+                if (scene6var >= 30) {
+                    bodyElem.innerHTML = `
+                        <img src="https://media.tenor.com/SDngsw0xdPcAAAAj/nezha-natra.gif" style="height: 500px;">
+                        <div class="buttons">
+                            <button onclick="loadScene(7)">Yes</button>
+                            <button onclick="loadScene(6)">No</button>
+                        </div>
+                    `;
+                } else {
+                    bodyElem.innerHTML = `
+                        <div class="question" style="font-size: ${scene6var}px;">Happy Birthday!</div>
+                        <div class="question">is that better?</div>
+                        <div class="buttons">
+                            <button onclick="loadScene(7)">Yes</button>
+                            <button onclick="loadScene(6)">No</button>
+                        </div>
+                    `;
+                }
+            } else if (scene === 7) {
                 bodyElem.innerHTML = `
-                    
+                    <div class="question" style="font-size: 30px;">...</div>
                 `;
-            } else if (scene === 2) {
+                setTimeout(() => {loadScene(8);}, 2000);
+            } else if (scene === 8) {
                 bodyElem.innerHTML = `
-                    
+                    <div class="question" style="margin-bottom: 20px;">You're just jealous that I get to see the sun</div>
+                    <div class="question">You rn</div>
+                    <img src="https://media.tenor.com/1M8olqcU6B8AAAAj/nezha-natra.gif" style="width: 300px">
+                    <div class="buttons">
+                        <button onclick="loadScene(9)">Rude</button>
+                    </div>
                 `;
-            } else if (scene === 2) {
+                makeImgFade();
+            } else if (scene === 9) {
                 bodyElem.innerHTML = `
-                    
+                    <div class="question">BRUH</div>
+                    <div class="buttons">
+                        <button style="font-size: 20px;" onclick="loadScene(10)">😁</button>
+                    </div>
                 `;
-            } else if (scene === 2) {
+            } else if (scene === 10) {
                 bodyElem.innerHTML = `
-                    
+                    <div class="question">OK FINE</div>
                 `;
-            } else if (scene === 2) {
+                setTimeout(() => {loadScene(11);}, 2000);
+            } else if (scene === 11) {
                 bodyElem.innerHTML = `
-                    
+                    <div class="question">But first, you need to answer a couple of questions.</div>
+                    <div class="buttons">
+                        <button onclick="loadScene(12)">Ok</button>
+                    </div>
                 `;
-            } else if (scene === 2) {
+            } else if (scene === 12) {
+                scene12var += 6;
                 bodyElem.innerHTML = `
-                    
+                    <div class="question">How old are you now?</div>
+                    <img src="images/12-toes.jpg" style="height: 400px;">
+                    <div class="buttons">
+                        <button onclick="loadScene(13)" style="width: ${scene12var}px; height: ${scene12var}px;">21</button>
+                        <button onclick="loadScene(12)" style="height: 40px;">not 21</button>
+                    </div>
                 `;
-            } else if (scene === 2) {
+                makeImgFade();
+            } else if (scene === 13) {
                 bodyElem.innerHTML = `
-                    
+                    <div class="question">DAMN THAT'S OLD</div>
+                    <img src="images/13-oppenheimer.jpg" style="height: 600px;">
+                    <div class="buttons">
+                        <button onclick="loadScene(14)">next</button>
+                    </div>
                 `;
-            } else if (scene === 2) {
+                makeImgFade();
+            } else if (scene === 14) {
                 bodyElem.innerHTML = `
-                    
+                    <div class="question">Next question:</div>
                 `;
+                setTimeout(() => {loadScene(15)}, 2000);
+            } else if (scene === 15) {
+                bodyElem.innerHTML = `
+                    <div class="question">Who's better at dk summit?</div>
+                    <img src="images/15-you.jpg" style="height: 400px;">
+                    <div class="buttons">
+                        <button onclick="loadScene(17)">You</button>
+                        <button onclick="loadScene(16)">Me</button>
+                    </div>
+                `;
+                makeImgFade();
+            } else if (scene === 16) {
+                bodyElem.innerHTML = `
+                    <div class="question">Me?</div>
+                `;
+                setTimeout(() => {loadScene(17)}, 2000);
+            } else if (scene === 17) {
+                bodyElem.innerHTML = `
+                    <div class="question">That's right!</div>
+                `;
+                setTimeout(() => {loadScene(18)}, 2000);
+            } else if (scene === 18) {
+                bodyElem.innerHTML = `
+                    <div class="question">Last question:</div>
+                `;
+                setTimeout(() => {loadScene(19)}, 2000);
+            } else if (scene === 19) {
+                bodyElem.innerHTML = `
+                    <div class="question">What's the first university that rejected me?</div>
+                    <div style="display: flex; justify-content: center;">
+                        <img src="images/19-uw.jpg" style="height: 400px;">
+                    </div>
+                    <div class="buttons">
+                        <button onclick="loadScene(21)">University of Washington</button>
+                        <button onclick="loadScene(20)">University of Wisconsin, Madison</button>
+                        <button onclick="loadScene(20)">George Washington University</button>
+                        <button onclick="loadScene(20)">Washington State University</button>
+                    </div>
+                `;
+                //https://media.tenor.com/q6f8pOIhXoEAAAAj/nezha-natra.gif
+                makeImgFade();
+            } else if (scene === 20) {
+                bodyElem.innerHTML = `
+                    <img src="https://media.tenor.com/q6f8pOIhXoEAAAAj/nezha-natra.gif" style="height: 800px;">
+                `;
+                setTimeout(() => {loadScene(19)}, 2000);
+            } else if (scene === 21) {
+                bodyElem.innerHTML = `
+                    <div class="question">That's right!</div>
+                    <img src="https://media.tenor.com/kYSf7grsqBIAAAAj/tn26.gif" style="height: 600px;">
+                `;
+                makeImgFade();
+                setTimeout(() => {loadScene(22)}, 3500);
+            } else if (scene === 22) {
+                bodyElem.innerHTML = `
+                    <div class="question">Ok, you finally made it.</div>
+                `;
+                setTimeout(() => {loadScene(23)}, 2500);
+            } else if (scene === 23) {
+                bodyElem.innerHTML = `
+                    <div class="question">Happy birthday, Andrew.</div>
+                `;
+                setTimeout(() => {loadScene(24)}, 2500);
+            } else if (scene === 24) {
+                bodyElem.innerHTML = `
+                    <div class="question">You're the best brother ever.</div>
+                `;
+                setTimeout(() => {loadScene(25)}, 2500);
+            } else if (scene === 25) {
+                bodyElem.innerHTML = `
+                    <div class="question">Like, actually.</div>
+                `;
+                setTimeout(() => {loadScene(26)}, 3000);
+            } else if (scene === 26) {
+                bodyElem.innerHTML = `
+                    <div class="question">THE END</div>
+                    <img src="images/25-end.jpg" style="height: 600px;">
+                    <div class="buttons">
+                        <button class="confetti-btn">👏</button>
+                    </div>
+                `;
+                document.querySelector('.confetti-btn').addEventListener('click', () => {
+                    confetti({
+                        particleCount: 200,
+                        spread: 120,
+                        origin: {y: 0.8}
+                    })
+                })
+            }
+        }
+        
+        function makeImgFade() {
+            let imgElem = document.querySelector('img');
+            imgElem.classList.add('fade-in-image');
+            
+            // Remove the loaded class initially to reset the state
+            imgElem.classList.remove('loaded');
+            
+            // Force a reflow to ensure the removal of the class is applied
+            void imgElem.offsetWidth;  // This is a hack to trigger a reflow - THANK YOU CHATGPT
+            
+            if (imgElem.complete) {
+                imgElem.classList.add('loaded');
+            } else {
+                imgElem.addEventListener('load', () => {
+                    imgElem.classList.add('loaded');
+                });
             }
         }
         
