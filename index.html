@@ -51,7 +51,7 @@
     <script>
         function isApril12() {
             const currentDate = new Date();
-            return currentDate.getMonth() === 3 && currentDate.getDate() === 12;
+            return currentDate.getMonth() === 3 && currentDate.getDate() === 25;
         }
         
         let numTimes12 = 0; //scene 12 variable
@@ -71,11 +71,10 @@
             } else if (scene === 2) {
                 bodyElem.innerHTML = `
                     <div class="question">damn... </div>
-                    <div class="question">you're so impatient..</div>
                 `;
-                setTimeout(() => {
+                /*setTimeout(() => {
                     window.location = `bd.html`;
-                }, 2000);
+                }, 2000);*/
             } else if (scene === 3) {
                 bodyElem.innerHTML = `
                     <img src="https://static.wikia.nocookie.net/beca7c5b-ebc4-4d77-8613-2705c340fa23/scale-to-width/755">
